@@ -45,7 +45,7 @@ add_action( 'wp_enqueue_scripts', 'devo_theme_loadStyle' );
 function devo_custom_header_setup() {
   $defaults = array(
       
-      'default-image' => get_template_directory_uri() . '/asstes/image/cover.jpg',
+      'default-image' => get_template_directory_uri() . '/assets/image/cover.jpg',
       // Display the header text along with the image
       'header-text' => true,
       // Header text color default
