@@ -1,6 +1,6 @@
 <div class="services pd">
     <div class="container">
-        <h3 class="title">Services</h3>
+        <h3 class="title"><?php echo get_theme_mod( 'front_services_header' ); ?></h3>
         <div class="row text-center">
             <div class="col-md-">
                 <div class="square"><i class="fas fa-code"></i></div>
