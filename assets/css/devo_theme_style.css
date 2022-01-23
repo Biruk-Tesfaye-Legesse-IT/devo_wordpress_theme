@@ -10,11 +10,21 @@ li a {
     display: inline;
 } */
 
-#cover-text {
-    color: aliceblue;
-    text-align: center;
-    padding-top: 200px;
+
+#devo_welcome_text {
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    color: whitesmoke;
 }
+
+#callToAction {
+    position: absolute;
+    top: 50%;
+    left: 48%;
+    color: whitesmoke;
+}
+
 
 .jumbotron {
     text-align: center;
