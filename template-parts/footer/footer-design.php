@@ -2,7 +2,7 @@
 <footer class="site-footer">
     <p><?php bloginfo( 'name' ) ?></p>
     <div class="container-fluid mt-5">
-    <div class="card bg-white mx-5">
+    <div class="bg-white mx-5">
         <div class="row mb-4">
             <div class="col-md-4 col-sm-4 col-xs-4">
                 <div class="footer-text pull-left">

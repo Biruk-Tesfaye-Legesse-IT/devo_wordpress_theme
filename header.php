@@ -18,7 +18,7 @@
 </header>
 
 <?php get_template_part('template-parts/navigation/navigation', 'primary'); ?>
-<?php get_template_part('template-parts/header/header', 'image'); ?>
+
 
 <!-- <h1>   <a href="<?php echo home_url()?>"><?php bloginfo('name')?></a>  </h1>
 <h4><?php bloginfo('description')?></h4> -->
