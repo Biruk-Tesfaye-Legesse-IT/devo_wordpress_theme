@@ -8,8 +8,6 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta animi aperiam incidunt sed beatae cumque architecto corrupti veniam alias molestias error totam dolorum odit illo dolore quam, at distinctio nobis.</p>
   </div> -->
 
-  <?php get_template_part('template-parts/header/header', 'image'); ?>
-    <div class="container">
  <?php
   if (!get_theme_mod( 'front_about_checkbox' )) { ?>
         <div class="container">
@@ -39,7 +37,6 @@
 
 
 
-</div>
 
 
 
