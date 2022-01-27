@@ -1,458 +1,55 @@
+
 <?php
-
-// =======================Add Menu=======================================
-
-// Add Menu Support
-add_theme_support('menus');
-add_theme_support( 'custom-header' );
-
-// =======================Register Nav Menu =======================================
-
-// Register Nav Menu 
-function devo_theme_menu() {
-    register_nav_menus(
-      array(
-        'top-menu' => __( 'Top Menu' ),
-        'footer-menu' => __( 'Footer Menu' )
-      )
-    );
-  }
-
-//   Add the hook to make the menu 
-add_action( 'init', 'devo_theme_menu' );
-
-// =======================Adding sidebar =======================================
-
-// Adding sidebar 
-function my_custom_theme_sidebar() {
-  register_sidebar( array(
-      'name' => __( 'Primary Sidebar', 'my-custom-theme' ),
-      'id'   => 'sidebar-1',
-       'before_widget' => '<div>',
-      'after_widget'  => '</div>',
-      'before_title'  => '<h2 class="rounded">',
-      'after_title'   => '</h2>',
-  ) );
-}
-
-add_action( 'widgets_init', 'my_custom_theme_sidebar' );
-
-// ======================Adding Style ===========================================
-
-// Adding Style 
-function devo_theme_loadStyle()
-{
-    wp_register_style( 'devo_theme_style', get_template_directory_uri() . '/assets/css/devo_theme_style.css',array(), false, 'all');
-    wp_enqueue_style('devo_theme_style');
-}
-
-add_action( 'wp_enqueue_scripts', 'devo_theme_loadStyle' );
-
-// ======================Adding Script ===========================================
-
-function devo_theme_loadScript()
-{
-    // wp_register_script( 'devo_theme_jquery', 'https://code.jquery.com/jquery-3.6.0.slim.min.js',array(), false, true);
-    wp_register_script( 'devo_theme_jquery', get_template_directory_uri() . '/assets/js/jquery-3.6.0.slim.min.js',array(),'3.6.0', true);
-    wp_register_script( 'devo_theme_bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js',array(),'4.0.0', true);
-    wp_register_script( 'devo_theme_popper', get_template_directory_uri() . '/assets/js/popper.min.js',array(),'1.0.0', true);
-    
-    
-    wp_enqueue_script('devo_theme_jquery');
-
-    wp_enqueue_script('devo_theme_bootstrap');
-   
-    
-   
-}
-
-
-add_action( 'wp_enqueue_scripts', 'devo_theme_loadScript' );
-
-// ==================Elementor support===================
-function theme_prefix_register_elementor_locations( $elementor_theme_manager ) {
-
-	$elementor_theme_manager->register_all_core_location();
-
-}
-add_action( 'elementor/theme/register_locations', 'theme_prefix_register_elementor_locations' );
-
-// registering new elementor location
-function devo_register_elementor_locations( $elementor_theme_manager ) {
-
-	$elementor_theme_manager->register_location(
-		'under_front_about',
-		[
-			'label' => esc_html__( 'Under Front ABout', 'devo' ),
-			'multiple' => true,
-			'edit_in_content' => true,
-		]
-	);
-
-}
-add_action( 'elementor/theme/register_locations', 'devo_register_elementor_locations' );
-
+// ===================common functions=========================
+ require get_template_directory().'/inc/common-function.php'; 
 
 // ========================Adding Custom Header=======================================================
 
-function devo_custom_header_setup() {
-  $defaults = array(
-      
-      'default-image' => get_template_directory_uri() . '/assets/image/cover.jpg',
-      // Display the header text along with the image
-      'header-text' => true,
-      // Header text color default
-      'default-text-color'  => '000',
-      // Header image width (in pixels)
-      'width' => 1000,
-      // Header image height (in pixels)
-      'height' => 198,
-      // Header image random rotation default
-      'random-default'  => false,
-      // Enable upload of image file in admin 
-      'uploads' => false,
-      // function to be called in theme head section
-      'wp-head-callback' => 'wphead_cb',
-      //  function to be called in preview page head section
-      'admin-head-callback'  => 'adminhead_cb',
-      // function to produce preview markup in the admin screen
-      'admin-preview-callback' => 'adminpreview_cb',
-      );
-}
-add_action( 'after_setup_theme', 'devo_custom_header_setup' );
-
+require get_template_directory().'/inc/header-image-customizer.php';
 
 // ========================Adding langing cover section customizer=======================================================
 
-function landing_customizer( $wp_customize ) {
-	$wp_customize->add_section( 'devo', array(
-		'title' => 'Devo Landing+', // The title of section
-		'description' => 'Settings of Devo section', // The description of section
-	) );
-  
-  // ============= welcome text ================
-	$wp_customize->add_setting( 'devo_welcome_text', array(
-    'default' => 'Hello world',
-    // Let everything else default
-  ) );
-
-  $wp_customize->add_control( 'devo_welcome_text', array(
-    'label' => 'Welcome text',
-    // 'type' =>, // Default is "text", define the content type of setting rendering.
-    'section' => 'devo', // id of section to which the setting belongs
-    // Let everything else default
-  ) );
-
-  // ============= call to action ================
-  $wp_customize->add_setting( 'call_to_action_name', array(
-    'default' => 'More',
-    // Let everything else default
-  ) );
-
-  $wp_customize->add_control( 'call_to_action_name', array(
-    'label' => 'Call to action button text',
-    // 'type' =>, // Default is "text", define the content type of setting rendering.
-    'section' => 'devo', // id of section to which the setting belongs
-    // Let everything else default
-  ) );
-
-  $wp_customize->add_setting( 'call_to_action', array(
-    'default' => '/blog',
-    // Let everything else default
-  ) );
-
-  $wp_customize->add_control( 'call_to_action', array(
-    'label' => 'Call to action button link',
-    // 'type' =>, // Default is "text", define the content type of setting rendering.
-    'section' => 'devo', // id of section to which the setting belongs
-    // Let everything else default
-  ) );
-}
-
-add_action( 'customize_register', 'landing_customizer', 11 );
-
+require get_template_directory().'/inc/landing-customizer.php';
 
 // ========================Adding front page about section customizer=======================================================
 
-function front_about_customizer( $wp_customize ) {
-	$wp_customize->add_section( 'devo_front_about', array(
-		'title' => 'Devo Front page About Section+', // The title of section
-		'description' => 'Setting for the about section on the front page.', // The description of section
-	) );
-  $wp_customize->add_setting( 'front_about_header', array(
-    'default' => 'About this Theme',
-    // Let everything else default
-  ) );
+require get_template_directory().'/inc/front-about.php';
+// ========================Adding services customizer=======================================================
 
-  $wp_customize->add_control( 'front_about_header', array(
-    'label' => 'Front-page about section header',
-    // 'type' =>, // Default is "text", define the content type of setting rendering.
-    'section' => 'devo_front_about', // id of section to which the setting belongs
-    // Let everything else default
-  ) );
-
-  $wp_customize->add_setting( 'front_about_body', array(
-    'default' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta animi aperiam incidunt sed beatae cumque architecto corrupti veniam alias molestias error totam dolorum odit illo dolore quam, at distinctio nobis.',
-    // Let everything else default
-  ) );
-
-  $wp_customize->add_control( 'front_about_body', array(
-    'label' => 'Front-page about section body',
-    'type' => 'textarea', 
-    'section' => 'devo_front_about', // id of section to which the setting belongs
-    // Let everything else default
-  ) );
-
-  // check box whether to display the about section or not
-  $wp_customize->add_setting( 'front_about_checkbox', array(
-		'default' => 0,
-	) );
-
-	$wp_customize->add_control( 'front_about_checkbox', array(
-		'label' => 'Hide About section',
-		'type' => 'checkbox',
-		'section' => 'devo_front_about',
-	) );
-  }
-
-  add_action( 'customize_register', 'front_about_customizer', 11 );
-
-  // ========================Adding services section customizer=======================================================
-
-function front_services_customizer( $wp_customize ) {
-	$wp_customize->add_section( 'devo_services', array(
-		'title' => 'Devo Sevices Section+', // The title of section
-		'description' => 'Settings for the services section on the front page.', // The description of section
-	) );
-  
-
-  // Services section header on the front page
-  $wp_customize->add_setting( 'front_services_header', array(
-    'default' => 'Services',
-    // Let everything else default
-  ) );
-
-  $wp_customize->add_control( 'front_services_header', array(
-    'label' => 'Services Section Header',
-    'section' => 'devo_services', // id of section to which the setting belongs
-    // Let everything else default
-  ) );
-
-  // ++++++++++++++++++++++++Service 1 ++++++++++++++++++++++++++++++++++
-
-  $wp_customize->add_setting( 'front_service1_icon', array(
-    'default' => 'fas fa-code',
-    // Let everything else default
-  ) );
-
-  $wp_customize->add_control( 'front_service1_icon', array(
-    'label' => 'Service 1 Icon',
-    'section' => 'devo_services', // id of section to which the setting belongs
-    // Let everything else default
-  ) );
-
-  $wp_customize->add_setting( 'front_service1_title', array(
-    'default' => 'Clean Code',
-    // Let everything else default
-  ) );  
-
-  $wp_customize->add_control( 'front_service1_title', array(
-    'label' => 'Service 1 title',
-    'section' => 'devo_services', // id of section to which the setting belongs
-    // Let everything else default
-  ) );
-
-  $wp_customize->add_setting( 'front_service1_body', array(
-    'default' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
-    // Let everything else default
-  ) );  
-
-  $wp_customize->add_control( 'front_service1_body', array(
-    'label' => 'Service 1 body',
-    'section' => 'devo_services', // id of section to which the setting belongs
-    // Let everything else default
-  ) );
-  
-  $wp_customize->add_setting( 'front_service1_checkbox', array(
-    'default' => 0,
-    // Let everything else default
-  ) );  
-
-  $wp_customize->add_control( 'front_service1_checkbox', array(
-    'label' => 'Hide Service 1',
-    'type' => 'checkbox',
-    'section' => 'devo_services', // id of section to which the setting belongs
-    // Let everything else default
-  ) );
-
-  // ---------------------------------------------------------------
-
-    // ++++++++++++++++++++++++Service 2 ++++++++++++++++++++++++++++++++++
-
-    $wp_customize->add_setting( 'front_service2_icon', array(
-      'default' => 'fas fa-cogs',
-      // Let everything else default
-    ) );
-  
-    $wp_customize->add_control( 'front_service2_icon', array(
-      'label' => 'Service 2 Icon',
-      'section' => 'devo_services', // id of section to which the setting belongs
-      // Let everything else default
-    ) );
-  
-    $wp_customize->add_setting( 'front_service2_title', array(
-      'default' => 'Problem Solving',
-      // Let everything else default
-    ) );  
-  
-    $wp_customize->add_control( 'front_service2_title', array(
-      'label' => 'Service 2 title',
-      'section' => 'devo_services', // id of section to which the setting belongs
-      // Let everything else default
-    ) );
-  
-    $wp_customize->add_setting( 'front_service2_body', array(
-      'default' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
-      // Let everything else default
-    ) );  
-  
-    $wp_customize->add_control( 'front_service2_body', array(
-      'label' => 'Service 2 body',
-      'section' => 'devo_services', // id of section to which the setting belongs
-      // Let everything else default
-    ) );
-    
-    $wp_customize->add_setting( 'front_service2_checkbox', array(
-      'default' => 0,
-      // Let everything else default
-    ) );  
-  
-    $wp_customize->add_control( 'front_service2_checkbox', array(
-      'label' => 'Hide Service 2',
-      'type' => 'checkbox',
-      'section' => 'devo_services', // id of section to which the setting belongs
-      // Let everything else default
-    ) );
-  
-    // ---------------------------------------------------------------
-
-    // ++++++++++++++++++++++++Service 3 ++++++++++++++++++++++++++++++++++
-
-    $wp_customize->add_setting( 'front_service3_icon', array(
-      'default' => 'fas fa-cogs',
-      // Let everything else default
-    ) );
-  
-    $wp_customize->add_control( 'front_service3_icon', array(
-      'label' => 'Service 3 Icon',
-      'section' => 'devo_services', // id of section to which the setting belongs
-      // Let everything else default
-    ) );
-  
-    $wp_customize->add_setting( 'front_service3_title', array(
-      'default' => 'Problem Solving',
-      // Let everything else default
-    ) );  
-  
-    $wp_customize->add_control( 'front_service3_title', array(
-      'label' => 'Service 3 title',
-      'section' => 'devo_services', // id of section to which the setting belongs
-      // Let everything else default
-    ) );
-  
-    $wp_customize->add_setting( 'front_service3_body', array(
-      'default' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
-      // Let everything else default
-    ) );  
-  
-    $wp_customize->add_control( 'front_service3_body', array(
-      'label' => 'Service 3 body',
-      'section' => 'devo_services', // id of section to which the setting belongs
-      // Let everything else default
-    ) );
-    
-    $wp_customize->add_setting( 'front_service3_checkbox', array(
-      'default' => 0,
-      // Let everything else default
-    ) );  
-  
-    $wp_customize->add_control( 'front_service3_checkbox', array(
-      'label' => 'Hide Service 3',
-      'type' => 'checkbox',
-      'section' => 'devo_services', // id of section to which the setting belongs
-      // Let everything else default
-    ) );
-  
-    // ---------------------------------------------------------------
-
-    // ++++++++++++++++++++++++Service 4 ++++++++++++++++++++++++++++++++++
-
-    $wp_customize->add_setting( 'front_service4_icon', array(
-      'default' => 'fas fa-cogs',
-      // Let everything else default
-    ) );
-  
-    $wp_customize->add_control( 'front_service4_icon', array(
-      'label' => 'Service 4 Icon',
-      'section' => 'devo_services', // id of section to which the setting belongs
-      // Let everything else default
-    ) );
-  
-    $wp_customize->add_setting( 'front_service4_title', array(
-      'default' => 'Problem Solving',
-      // Let everything else default
-    ) );  
-  
-    $wp_customize->add_control( 'front_service4_title', array(
-      'label' => 'Service 4 title',
-      'section' => 'devo_services', // id of section to which the setting belongs
-      // Let everything else default
-    ) );
-  
-    $wp_customize->add_setting( 'front_service4_body', array(
-      'default' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
-      // Let everything else default
-    ) );  
-  
-    $wp_customize->add_control( 'front_service4_body', array(
-      'label' => 'Service 4 body',
-      'section' => 'devo_services', // id of section to which the setting belongs
-      // Let everything else default
-    ) );
-    
-    $wp_customize->add_setting( 'front_service4_checkbox', array(
-      'default' => 0,
-      // Let everything else default
-    ) );  
-  
-    $wp_customize->add_control( 'front_service4_checkbox', array(
-      'label' => 'Hide Service 4',
-      'type' => 'checkbox',
-      'section' => 'devo_services', // id of section to which the setting belongs
-      // Let everything else default
-    ) );
-  
-    // ---------------------------------------------------------------
-
-   // Services section header on the front page
-   $wp_customize->add_setting( 'front_services_checkbox', array(
-    'default' => 0,
-    // Let everything else default
-  ) );
-
-  $wp_customize->add_control( 'front_services_checkbox', array(
-    'label' => 'Hide the whole Services Section',
-    'type' => 'checkbox',
-    'section' => 'devo_services', // id of section to which the setting belongs
-    // Let everything else default
-  ) );
+require get_template_directory().'/inc/service-customizer.php';
 
 
 
+// creating default home page
+if(get_page_by_title("Home") == null)
+{
+    $post = array(
+        "post_title" => "Home",
+        "post_status" => "publish",
+        "post_type" => "page",
+        "menu_order" => "-100",
+        "page_template" => "front-default.php"
+    );
 
+    wp_insert_post($post);
 
-  }
+    $home_page = get_page_by_title("Home");
+    update_option("page_on_front",$home_page->ID);
+    update_option("show_on_front","page");
 
-  add_action( 'customize_register', 'front_services_customizer', 11 );
+}
+if(get_page_by_title("Contact") == null)
+{
+    $post = array(
+        "post_title" => "Contact",
+        "post_status" => "publish",
+        "post_type" => "page",
+        "menu_order" => "-100",
+        "page_template" => "single-contact.php"
+    );
+
+    wp_insert_post($post);
+
+}
+
 ?>
-
