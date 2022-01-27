@@ -4,7 +4,7 @@ get_header();
 ?>
 
 <?php get_search_form(); ?>
-<h2 class="m-2">Search result for: " <?php echo get_search_query();?> "</h2>
+<h2 class="m-2">Search result for: " <?php echo esc_html(get_search_query());?> "</h2>
 
 
 <div class="row" >

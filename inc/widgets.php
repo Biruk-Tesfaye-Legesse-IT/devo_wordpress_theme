@@ -10,8 +10,8 @@ function devo_theme_sidebar() {
         'after_title'   => '</h2>',
     ) );
     register_sidebar( array(
-        'name' => __( 'Footer Bar', 'devo' ),
-        'id'   => 'footer_bar',
+        'name' => __( 'Footer Ba 2', 'devo' ),
+        'id'   => 'footer_bar1',
         'before_widget' => '<div>',
         'after_widget'  => '</div>',
         'before_title'  => '<h2 class="rounded">',
@@ -19,7 +19,16 @@ function devo_theme_sidebar() {
     ) );
 
     register_sidebar( array(
-        'name' => __( 'Top tile Bar', 'devo' ),
+        'name' => __( 'Footer Bar 2', 'devo' ),
+        'id'   => 'footer_bar2',
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="rounded">',
+        'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name' => __( 'Top title Bar', 'devo' ),
         'id'   => 'top_bar',
         'before_widget' => '<div style="text-align:center; margin-top:1px; font-size:50px;">',
         'after_widget'  => '</div>',

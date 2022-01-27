@@ -15,8 +15,8 @@
         <div class="container">
         <div class="row">
         <div>
-            <h1 style="color: #777;"><?php echo get_theme_mod( 'front_about_header' ); ?></h1>      
-            <p style="color: #777;"><?php echo get_theme_mod( 'front_about_body' ); ?></p>
+            <h1 style="color: #777;"><?php echo esc_html(get_theme_mod( 'front_about_header' )); ?></h1>      
+            <p style="color: #777;"><?php echo esc_html(get_theme_mod( 'front_about_body' )); ?></p>
         </div>
        
         </div>

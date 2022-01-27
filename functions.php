@@ -1,5 +1,6 @@
 
 <?php
+add_theme_support( 'automatic-feed-links' );
 // ===================common functions=========================
  require get_template_directory().'/inc/common-function.php'; 
 

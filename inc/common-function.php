@@ -1,8 +1,8 @@
 <?php
 // =======================Add Menu=======================================
 
-// Add Menu Support
-add_theme_support('menus');
+
+add_theme_support( "title-tag" );
 add_theme_support( 'custom-header' );
 
 // =======================Register Nav Menu =======================================
@@ -11,8 +11,8 @@ add_theme_support( 'custom-header' );
 function devo_theme_menu() {
     register_nav_menus(
       array(
-        'top-menu' => __( 'Top Menu' ),
-        'footer-menu' => __( 'Footer Menu' )
+        'top-menu' => __( 'Top Menu', 'devo' ),
+        'footer-menu' => __( 'Footer Menu', 'devo' )
       )
     );
   }

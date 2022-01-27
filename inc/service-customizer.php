@@ -10,6 +10,7 @@
 
   // Services section header on the front page
   $wp_customize->add_setting( 'front_services_header', array(
+    'sanitize_callback' => 'sanitize_text_field',
     'default' => 'Services',
     // Let everything else default
   ) );
@@ -24,6 +25,7 @@
 
   $wp_customize->add_setting( 'front_service1_icon', array(
     'default' => 'fas fa-code',
+    'sanitize_callback' => 'sanitize_text_field',
     // Let everything else default
   ) );
 
@@ -35,6 +37,7 @@
 
   $wp_customize->add_setting( 'front_service1_title', array(
     'default' => 'Clean Code',
+    'sanitize_callback' => 'sanitize_text_field',
     // Let everything else default
   ) );  
 
@@ -46,6 +49,7 @@
 
   $wp_customize->add_setting( 'front_service1_body', array(
     'default' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+    'sanitize_callback' => 'sanitize_text_field',
     // Let everything else default
   ) );  
 
@@ -57,6 +61,7 @@
   
   $wp_customize->add_setting( 'front_service1_checkbox', array(
     'default' => 0,
+    'sanitize_callback' => 'sanitize_text_field',
     // Let everything else default
   ) );  
 
@@ -73,6 +78,7 @@
 
     $wp_customize->add_setting( 'front_service2_icon', array(
       'default' => 'fas fa-cogs',
+      'sanitize_callback' => 'sanitize_text_field',
       // Let everything else default
     ) );
   
@@ -84,6 +90,7 @@
   
     $wp_customize->add_setting( 'front_service2_title', array(
       'default' => 'Problem Solving',
+      'sanitize_callback' => 'sanitize_text_field',
       // Let everything else default
     ) );  
   
@@ -95,6 +102,7 @@
   
     $wp_customize->add_setting( 'front_service2_body', array(
       'default' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+      'sanitize_callback' => 'sanitize_text_field',
       // Let everything else default
     ) );  
   
@@ -106,6 +114,7 @@
     
     $wp_customize->add_setting( 'front_service2_checkbox', array(
       'default' => 0,
+      'sanitize_callback' => 'sanitize_text_field',
       // Let everything else default
     ) );  
   
@@ -122,6 +131,7 @@
 
     $wp_customize->add_setting( 'front_service3_icon', array(
       'default' => 'fas fa-cogs',
+      'sanitize_callback' => 'sanitize_text_field',
       // Let everything else default
     ) );
   
@@ -133,6 +143,7 @@
   
     $wp_customize->add_setting( 'front_service3_title', array(
       'default' => 'Problem Solving',
+      'sanitize_callback' => 'sanitize_text_field',
       // Let everything else default
     ) );  
   
@@ -144,6 +155,7 @@
   
     $wp_customize->add_setting( 'front_service3_body', array(
       'default' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+      'sanitize_callback' => 'sanitize_text_field',
       // Let everything else default
     ) );  
   
@@ -155,6 +167,7 @@
     
     $wp_customize->add_setting( 'front_service3_checkbox', array(
       'default' => 0,
+      'sanitize_callback' => 'sanitize_text_field',
       // Let everything else default
     ) );  
   
@@ -171,6 +184,7 @@
 
     $wp_customize->add_setting( 'front_service4_icon', array(
       'default' => 'fas fa-cogs',
+      'sanitize_callback' => 'sanitize_text_field',
       // Let everything else default
     ) );
   
@@ -182,6 +196,7 @@
   
     $wp_customize->add_setting( 'front_service4_title', array(
       'default' => 'Problem Solving',
+      'sanitize_callback' => 'sanitize_text_field',
       // Let everything else default
     ) );  
   
@@ -193,6 +208,7 @@
   
     $wp_customize->add_setting( 'front_service4_body', array(
       'default' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+      'sanitize_callback' => 'sanitize_text_field',
       // Let everything else default
     ) );  
   
@@ -204,6 +220,7 @@
     
     $wp_customize->add_setting( 'front_service4_checkbox', array(
       'default' => 0,
+      'sanitize_callback' => 'sanitize_text_field',
       // Let everything else default
     ) );  
   
@@ -219,6 +236,7 @@
    // Services section header on the front page
    $wp_customize->add_setting( 'front_services_checkbox', array(
     'default' => 0,
+    'sanitize_callback' => 'sanitize_text_field',
     // Let everything else default
   ) );
 

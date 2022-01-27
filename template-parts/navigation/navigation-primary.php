@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-md navbar-dark navi" role="navigation">
   <div class="container navia">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'your-theme-slug'); ?>">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'devo'); ?>">
       <span class="navbar-toggler-icon"></span>
     </button>
     
