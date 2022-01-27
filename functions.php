@@ -18,6 +18,8 @@ require get_template_directory().'/inc/front-about.php';
 
 require get_template_directory().'/inc/service-customizer.php';
 
+require get_template_directory().'/inc/widgets.php';
+
 
 
 // creating default home page

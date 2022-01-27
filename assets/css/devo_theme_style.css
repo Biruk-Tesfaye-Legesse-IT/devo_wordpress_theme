@@ -21,16 +21,11 @@ li a {
 } */
 
 #devo_welcome_text {
-    position: absolute;
-    top: 40%;
-    left: 30%;
+   
     color: var(--container-bg);
 }
 
 #callToAction {
-    position: absolute;
-    top: 55%;
-    left: 40%;
     color: var(--container-bg);
 }
 

@@ -16,6 +16,15 @@
 
 
 </header>
+<?php 
+    if (is_front_page()) {
+        dynamic_sidebar( 'top_bar' );
+
+        
+    }
+ 
+?>
+
 
 <?php get_template_part('template-parts/navigation/navigation', 'primary'); ?>
 
@@ -23,7 +32,7 @@
 <?php 
     if (is_front_page()) {
         get_template_part('template-parts/header/header', 'image');
-        get_template_part('template-parts/header/header', 'callToAction');
+        
     }
  
 ?>

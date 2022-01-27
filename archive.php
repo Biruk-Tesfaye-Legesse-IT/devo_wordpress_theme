@@ -3,13 +3,9 @@
 get_header();
 ?>
 
+<h1>hello</h1>
 
-<?php get_template_part('template-parts/blog/blog', 'design'); ?>
-<?php
-// adds default footer or from footer.php
-get_footer();
-  
-?>
+
 
 
 
