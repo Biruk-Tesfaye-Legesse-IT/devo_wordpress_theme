@@ -16,7 +16,7 @@ require get_template_directory().'/inc/landing-customizer.php';
 require get_template_directory().'/inc/front-about.php';
 // ========================Adding services customizer=======================================================
 
-require get_template_directory().'/inc/service-custiomizer.php';
+require get_template_directory().'/inc/service-customizer.php';
  
 
 ?>
