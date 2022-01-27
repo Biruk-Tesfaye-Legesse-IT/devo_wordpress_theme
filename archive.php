@@ -7,7 +7,7 @@ get_header();
 <?php get_template_part('template-parts/blog/blog', 'design'); ?>
 <?php
 // adds default footer or from footer.php
-// get_footer();
+get_footer();
   
 ?>
 

@@ -1,6 +1,6 @@
 <!-- <hr> -->
 <footer class="site-footer">
-    <p><?php bloginfo( 'name' ) ?></p>
+    
     <div class="container-fluid mt-5">
     <div class="bg-white mx-5">
         <div class="row mb-4">
@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="col-md-2 col-sm-2 col-xs-2"></div>
-            <div class="col-md-2 col-sm-2 col-xs-2">
+            <!-- <div class="col-md-2 col-sm-2 col-xs-2">
                 <h5 class="heading">Services</h5>
                 <ul>
                     <li>IT Consulting</li>
@@ -23,8 +23,8 @@
                     <li>Cloud</li>
                     <li>Support</li>
                 </ul>
-            </div>
-            <div class="col-md-2 col-sm-2 col-xs-2">
+            </div> -->
+            <!-- <div class="col-md-2 col-sm-2 col-xs-2">
                 <h5 class="heading">Industries</h5>
                 <ul class="card-text">
                     <li>Finance</li>
@@ -32,8 +32,8 @@
                     <li>Smart Office</li>
                     <li>Retail</li>
                 </ul>
-            </div>
-            <div class="col-md-2 col-sm-2 col-xs-2">
+            </div> -->
+            <!-- <div class="col-md-2 col-sm-2 col-xs-2">
                 <h5 class="heading">Company</h5>
                 <ul class="card-text">
                     <li>About Us</li>
@@ -41,7 +41,7 @@
                     <li>Contact</li>
                     <li>Join Us</li>
                 </ul>
-            </div>
+            </div> -->
         </div>
         <div class="divider mb-4"> </div>
         <div class="row" style="font-size:10px;">
