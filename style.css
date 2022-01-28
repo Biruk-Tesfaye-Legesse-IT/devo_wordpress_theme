@@ -14,3 +14,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 devo WordPress Theme, (C) 2022 WordPress.org
 devo is distributed under the terms of the GNU GPL.
 */
+
+#author,
+#email {
+    font-family: "Open Sans", "Droid Sans", Arial;
+    font-style: italic;
+    color: #1d1d1d;
+    letter-spacing: .1em;
+}

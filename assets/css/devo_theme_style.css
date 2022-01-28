@@ -16,13 +16,16 @@ li a {
     margin: 10px;
 }
 
+.boil {
+    background-color: black;
+}
+
 
 /* li {
     display: inline;
 } */
 
 #devo_welcome_text {
-   
     color: var(--container-bg);
 }
 
@@ -684,8 +687,7 @@ img {
 }
 
 
-/* Contact Us
----------------------*/
+/* ======================Comment Section=========================== */
 
 .contact-name {
     margin-bottom: 30px;
@@ -827,4 +829,17 @@ img {
     -ms-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+
+
+/* ===================Comments Display================================== */
+
+comments-area {}
+
+comment-title {}
+
+ul.comment-list li a {
+    color: var(--link-color);
+    display: inline;
+    margin: 10px;
 }
