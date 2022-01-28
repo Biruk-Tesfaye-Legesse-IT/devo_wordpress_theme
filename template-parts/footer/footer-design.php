@@ -15,6 +15,8 @@
                 </div>
             </div>
             <div class="col-md-2 col-sm-2 col-xs-2"></div>
+
+            <?php dynamic_sidebar( 'footer_bar' ) ?>
             <!-- <div class="col-md-2 col-sm-2 col-xs-2">
                 <h5 class="heading">Services</h5>
                 <ul>

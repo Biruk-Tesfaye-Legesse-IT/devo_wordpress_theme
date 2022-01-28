@@ -1,8 +1,8 @@
 <?php
 // =======================Add Menu=======================================
 
-// Add Menu Support
-add_theme_support('menus');
+
+add_theme_support( "title-tag" );
 add_theme_support( 'custom-header' );
 add_theme_support( 'custom-logo' );
 add_theme_support( 'post-thumbnails' );
@@ -13,8 +13,8 @@ add_theme_support( 'post-thumbnails' );
 function devo_theme_menu() {
     register_nav_menus(
       array(
-        'top-menu' => __( 'Top Menu' ),
-        'footer-menu' => __( 'Footer Menu' )
+        'top-menu' => __( 'Top Menu', 'devo' ),
+        'footer-menu' => __( 'Footer Menu', 'devo' )
       )
     );
   }
@@ -24,19 +24,6 @@ add_action( 'init', 'devo_theme_menu' );
 
 // =======================Adding sidebar =======================================
 
-// Adding sidebar 
-function my_custom_theme_sidebar() {
-  register_sidebar( array(
-      'name' => __( 'Primary Sidebar', 'my-custom-theme' ),
-      'id'   => 'sidebar-1',
-       'before_widget' => '<div>',
-      'after_widget'  => '</div>',
-      'before_title'  => '<h2 class="rounded">',
-      'after_title'   => '</h2>',
-  ) );
-}
-
-add_action( 'widgets_init', 'my_custom_theme_sidebar' );
 
 // ======================Adding Style ===========================================
 

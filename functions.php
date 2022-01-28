@@ -1,5 +1,6 @@
 
 <?php
+add_theme_support( 'automatic-feed-links' );
 // ===================common functions=========================
  require get_template_directory().'/inc/common-function.php'; 
 
@@ -19,6 +20,7 @@ require get_template_directory().'/inc/front-about.php';
 
 require get_template_directory().'/inc/service-customizer.php';
 
+
 // ========================Adding color customizer=======================================================
 
 require get_template_directory().'/inc/color-customizer.php';
@@ -26,6 +28,11 @@ require get_template_directory().'/inc/color-customizer.php';
 // ========================Adding color customizer=======================================================
 
 require get_template_directory().'/inc/font-customizer.php';
+
+// ========================Adding widgets=======================================================
+
+require get_template_directory().'/inc/widgets.php';
+
 
 
 
