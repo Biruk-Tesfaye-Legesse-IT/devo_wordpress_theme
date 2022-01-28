@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    STATIC
+    <p>static</p>
 </body>
 </html>

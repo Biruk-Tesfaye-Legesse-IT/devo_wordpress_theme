@@ -6,6 +6,7 @@
     /* --tertiary: #7499f1; */
     --container-bg: whitesmoke;
     --text-color: #777;
+    --link-color: #20247B;
 }
 
 li a {
@@ -202,11 +203,11 @@ li a {
 
 .site-footer ul>li {
     padding: 4px;
-    color: #C5CAE9
+    color: var(--text-color)
 }
 
 .site-footer ul>li:hover {
-    color: #957bda;
+    color: --tertiary;
     cursor: pointer
 }
 
@@ -226,7 +227,7 @@ li a {
 }
 
 .site-footer .social>i:hover {
-    color: #957bda;
+    color: var(--tertiary);
     cursor: pointer
 }
 

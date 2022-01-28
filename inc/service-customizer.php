@@ -9,7 +9,8 @@
   
 
   // Services section header on the front page
-  $wp_customize->add_setting( 'front_services_header', array(
+  $wp_customize->add_setting( 'front_services_header',array(
+    'sanitize_callback' => 'devo_sanitize_text',
     'default' => 'Services',
     // Let everything else default
   ) );
@@ -19,6 +20,10 @@
     'section' => 'devo_services', // id of section to which the setting belongs
     // Let everything else default
   ) );
+
+  function devo_sanitize_text( $input ) {
+    return wp_kses_post( force_balance_tags( $input ) );
+  }
 
   // ++++++++++++++++++++++++Service 1 ++++++++++++++++++++++++++++++++++
 

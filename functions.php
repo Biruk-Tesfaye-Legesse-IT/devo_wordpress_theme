@@ -11,12 +11,21 @@ require get_template_directory().'/inc/header-image-customizer.php';
 
 require get_template_directory().'/inc/landing-customizer.php';
 
+
 // ========================Adding front page about section customizer=======================================================
 
 require get_template_directory().'/inc/front-about.php';
 // ========================Adding services customizer=======================================================
 
 require get_template_directory().'/inc/service-customizer.php';
+
+// ========================Adding color customizer=======================================================
+
+require get_template_directory().'/inc/color-customizer.php';
+
+// ========================Adding color customizer=======================================================
+
+require get_template_directory().'/inc/font-customizer.php';
 
 
 
